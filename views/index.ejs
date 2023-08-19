@@ -1,0 +1,40 @@
+<!-- index.ejs -->
+
+<html>
+
+<head>
+  <title><%= title %></title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+  <div class="container mt-4">
+    <div class="row">
+    
+      <% images.forEach((image, index) => { %>
+
+        <% if (index % 3 === 0 && index > 0) { %>
+          </div><div class="row">
+        <% } %>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="<%= image.src %>" class="card-img-top">
+            <div class="card-body">
+              <a href="<%= image.href %>" class="btn btn-primary stretched-link">View</a>
+            </div>
+          </div>
+        </div>   
+
+      <% }); %>
+    
+    </div>
+  </div>
+
+</body>
+
+</html>
